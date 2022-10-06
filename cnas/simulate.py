@@ -34,7 +34,7 @@ class AttackSimulator:
         group_id: str,
         how: str = "node",
         remove: bool = True,
-        random: bool = True,
+        random: bool = False,
         iter_n: int = 10,
         reverse: bool = True,
         metrics: List[Callable] = None,
@@ -150,9 +150,6 @@ class AttackSimulator:
         if num is not None and ratio is not None:
             raise ValueError("`num` and `ratio` could not be both specified")
 
-        assert num <= min(self.num_nodes.values()) if self.how == "node" else min(self.num_edges.values()),\
-            "`num` is larger than minimum number"
-
         if verbose:
             print('{:-^26s}'.format("Attack starts!"))
 
@@ -180,8 +177,9 @@ class AttackSimulator:
                 "squeezed": list_mean(attacked_metric_list)
                 }
             })
-
-        print('{:-^26s}'.format("Attack ends!"))
+            
+        if verbose:
+            print('{:-^26s}'.format("Attack ends!"))
 
         self.output_metrics = output_metrics
 

@@ -6,7 +6,7 @@ import numpy as np
 import random
 from networkx import Graph
 from cnas.types import NODE, EDGE
-from typing import List, Any
+from typing import List, Any, Dict
 
 
 def datadict(df: pd.DataFrame, group: str):
@@ -56,8 +56,15 @@ def remove_random_egdes(graph: Graph, num: int):
 
 def remove_targeted_nodes(graph: Graph, nodes: List[NODE]):
     for n in nodes:
-        graph.remove_edge(n)
+        graph.remove_node(n)
 
 def remove_targeted_edges(graph: Graph, edges: List[EDGE]):
     for e in edges:
         graph.remove_edge(*e)
+
+def dict2list(D: Dict[NODE, Dict[NODE, Any]]):
+    l = []
+    for i in D.values():
+        l.append(list(i.values()))
+
+    return l
