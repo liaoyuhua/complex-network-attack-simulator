@@ -29,6 +29,7 @@ This dataset is synthetic and simplified for showing the core of code. It is csv
 
 ## 4. Quick start
 ```python
+import pandas as pd
 from cnas.simulate import AttackSimulator
 from cnas.metrics import directed_global_efficiency
 
