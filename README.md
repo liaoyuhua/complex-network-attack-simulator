@@ -35,10 +35,10 @@ from cnas.metrics import directed_global_efficiency
 data = pd.read_csv("./data/data.csv")
 sim = AttackSimulator(
     data=data,
-    head="exporter",
-    tail="importer",
-    weight="volume",
-    group_id="year",
+    head="source",
+    tail="target",
+    weight="value",
+    group_id="date",
     how="edge",
     # random=False,
     random=True,
