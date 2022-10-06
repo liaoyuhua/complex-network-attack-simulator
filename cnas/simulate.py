@@ -112,7 +112,7 @@ class AttackSimulator:
         elif self.random and self.how=="edge":
             remove_random_egdes(graph=g, num=drop_num)
         elif (not self.random) and self.how=="node":
-            drop_nodes = [n for n, _ in sorted(list(g.degree()),
+            drop_nodes = [n for n, _ in sorted(list(nx.eigenvector_centrality(g, weight="weight").items()),
                                             key=lambda x: x[-1], reverse=self.reverse)[:drop_num]]
             remove_targeted_nodes(graph=g, nodes=drop_nodes)
         elif (not self.random) and self.how=="edge":
