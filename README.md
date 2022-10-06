@@ -1,6 +1,6 @@
-# Network Robustness Analysis
+# Complex Network Attack Simulator
 
-- [Network Robustness Analysis](#network-robustness-analysis)
+- [Complex Network Attack Simulator](#complex-network-attack-simulator)
   - [1. What's this?](#1-whats-this)
   - [2. Prerequisites](#2-prerequisites)
   - [3. Demo dataset](#3-demo-dataset)
@@ -13,11 +13,11 @@
     - [6.2 Edge attack](#62-edge-attack)
       - [6.2.1 Shocks via edge removal](#621-shocks-via-edge-removal)
       - [6.2.2 Shocks via edge perturbation](#622-shocks-via-edge-perturbation)
-  - [Email me?](#email-me)
+  - [Email me](#email-me)
 
 ## 1. What's this?
 
-This is a repository for analysis of complex network robustness in Python with NetworkX.
+This is a repository for simulation of complex network attack in Python with NetworkX.
 
 ## 2. Prerequisites
 
@@ -25,7 +25,7 @@ Basic Python coding and complex network analysis. Some object-oriented programmi
 
 ## 3. Demo dataset
 
-This dataset is synthetic and simplified for showing the core of code. It is csv format and has four columns, including from_node, to_node, value, and date.
+This dataset is synthetic and simplified for showing the core of code. It is csv format and has four columns, including source, target, value, and date.
 
 ## 4. Quick start
 ```python
@@ -52,6 +52,6 @@ import nra
 
 #### 6.2.2 Shocks via edge perturbation
 
-## Email me?
+## Email me
 If you have any question or better idea for this repository, feel free to contact me!
 <ml.liaoyuhua@gmail.com>
