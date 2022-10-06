@@ -29,10 +29,26 @@ This dataset is synthetic and simplified for showing the core of code. It is csv
 
 ## 4. Quick start
 ```python
-import nra
+from cnas.simulate import AttackSimulator
+from cnas.metrics import directed_global_efficiency
 
+data = pd.read_csv("./data/data.csv")
+sim = AttackSimulator(
+    data=data,
+    head="exporter",
+    tail="importer",
+    weight="volume",
+    group_id="year",
+    how="edge",
+    # random=False,
+    random=True,
+    iter_n=3,
+    metrics=[nx.average_clustering, nx.transitivity, directed_global_efficiency]
+)
 
+result = sim.attack(ratio=0.5)
 
+print(result)
 ```
 
 ## 5. Main APIs

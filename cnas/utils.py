@@ -5,7 +5,7 @@ import pandas as pd
 import numpy as np
 import random
 from networkx import Graph
-from nra.types import NODE, EDGE
+from cnas.types import NODE, EDGE
 from typing import List, Any
 
 
